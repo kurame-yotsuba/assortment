@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 
 namespace Assortment.KurameMath
 {
@@ -26,6 +27,8 @@ namespace Assortment.KurameMath
             double y = sin * X + cos * Y;
             return new(x, y);
         }
+
+        public void Deconstruct(out double x, out double y) => (x, y) = (X, Y);
 
         #region Overload of operators
 
